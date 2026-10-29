@@ -3,12 +3,14 @@ import { BasePage } from './base-page';
 
 export class FlipkartPage extends BasePage {
   private readonly searchBox: Locator;
+  private readonly productLinks: Locator;
 
   constructor(page: Page, baseUrl: string) {
     super(page, baseUrl);
     this.searchBox = page.getByRole('textbox', {
       name: 'Search for Products, Brands and More',
     });
+    this.productLinks = page.locator('a[href*="/p/"]');
   }
 
   async searchFor(productName: string): Promise<void> {
@@ -18,9 +20,8 @@ export class FlipkartPage extends BasePage {
   }
 
   async findProduct(productName: string): Promise<{ title: string; price: number }> {
-    const productLinks = this.page.locator('a[href*="/p/"]');
-    await productLinks.first().waitFor({ state: 'visible' });
-    const matchingProduct = productLinks.filter({ hasText: productName }).first();
+    await this.productLinks.first().waitFor({ state: 'visible' });
+    const matchingProduct = this.productLinks.filter({ hasText: productName }).first();
     if (!(await matchingProduct.count())) {
       throw new Error(`Flipkart has no visible search result for "${productName}".`);
     }
