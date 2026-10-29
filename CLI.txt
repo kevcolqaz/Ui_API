@@ -1,0 +1,29 @@
+Playwright CLI commands (Windows PowerShell)
+
+Setup
+  npm.cmd install
+  npx.cmd playwright install chromium firefox
+
+Run tests
+  npm.cmd test
+  npm.cmd run test:browsers
+  npm.cmd run test:api
+  npm.cmd run typecheck
+  npm.cmd run test:headed
+  npm.cmd run test:debug
+  npm.cmd run test:ui
+
+List tests without running them
+  npx.cmd playwright test --list
+
+Run a specific browser project
+  npx.cmd playwright test --project=chromium
+  npx.cmd playwright test --project=firefox
+  npx.cmd playwright test --project=api
+
+Run tests matching a title
+  npx.cmd playwright test --grep "ReqRes"
+  npx.cmd playwright test --grep "Flipkart"
+
+View the HTML report after a test run
+  npm.cmd run report

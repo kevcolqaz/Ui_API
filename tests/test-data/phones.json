@@ -1,0 +1,9 @@
+{
+  "flipkart": {
+    "baseUrl": "https://www.flipkart.com",
+    "productName": "OnePlus Nord 5",
+    "maxPriceInRupees": 30000,
+    "navigationTimeoutMs": 30000,
+    "testName": "Flipkart: OnePlus Nord 5 is available below Rs 30,000"
+  }
+}

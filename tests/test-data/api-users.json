@@ -1,0 +1,42 @@
+{
+  "reqres": {
+    "baseUrl": "https://reqres.in",
+    "usersPath": "/api/users",
+    "targetUserId": 2,
+    "listPage": 2,
+    "missingUserId": "9999",
+    "malformedUserId": "not-a-user-id",
+    "expectedStatus": {
+      "get": 200,
+      "list": 200,
+      "create": 201,
+      "update": 200,
+      "delete": 204,
+      "notFound": 404
+    },
+    "expectedUser": {
+      "id": 2,
+      "email": "janet.weaver@reqres.in",
+      "firstName": "Janet",
+      "lastName": "Weaver"
+    },
+    "createUser": {
+      "name": "Playwright API User",
+      "job": "QA Engineer"
+    },
+    "replaceUser": {
+      "name": "Updated Playwright API User",
+      "job": "Senior QA Engineer"
+    },
+    "patchUser": {
+      "job": "API Test Engineer"
+    },
+    "testNames": {
+      "getUser": "ReqRes: get a user by ID",
+      "listUsers": "ReqRes: list users on a page",
+      "crudChain": "ReqRes: chain create, replace, patch, and delete",
+      "missingUser": "ReqRes: reject a missing user ID",
+      "malformedUserId": "ReqRes: reject a malformed user ID"
+    }
+  }
+}
